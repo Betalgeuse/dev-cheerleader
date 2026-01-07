@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Cheerleader - Character Gallery</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --success: #3fb950;
+            --warning: #d29922;
+            --error: #f85149;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--bg-card);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            margin: 3rem 0;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+        
+        .pack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .pack-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--bg-card);
+        }
+        
+        .pack-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .pack-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .pack-badge {
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .pack-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .character-preview {
+            background: var(--bg-primary);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.85rem;
+            white-space: pre;
+            overflow-x: auto;
+            margin-bottom: 0.5rem;
+        }
+        
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .character-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        .character-name {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .character-ascii {
+            background: var(--bg-primary);
+            border-radius: 6px;
+            padding: 0.75rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.75rem;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            background: var(--bg-card);
+            border: none;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .tab:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+        
+        .tab.active {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 3rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+        
+        .cta-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--accent);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--bg-card);
+            margin-top: 3rem;
+        }
+        
+        .demo-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--bg-card);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.85rem;
+            white-space: pre;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .stats { flex-direction: column; gap: 1rem; }
+            .pack-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎉 Dev Cheerleader</h1>
+            <p class="subtitle">개발자를 위한 AI 치어리더 - ASCII 아트로 코딩을 응원합니다!</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">캐릭터</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">캐릭터 팩</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">상황별 응원</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">💫 데모</h2>
+            <div class="demo-box">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌟 DEV CHEERLEADER 🌟
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   \(^o^)/   오늘도 화이팅!
+    /|\      같이 열심히 해보자!
+    / \
+
+📣 새로운 세션 시작! 오늘도 멋진 코드 만들어보자!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📦 캐릭터 팩</h2>
+            <div class="pack-grid">
+                <div class="pack-card">
+                    <div class="pack-header">
+                        <span class="pack-name">🎭 Default Pack</span>
+                        <span class="pack-badge">FREE</span>
+                    </div>
+                    <p class="pack-description">기본 치어리더 캐릭터 - 20개의 다양한 표정과 포즈</p>
+                    <div class="category-tabs">
+                        <button class="tab active" onclick="showCategory(this, 'default')">Welcome</button>
+                        <button class="tab" onclick="showCategory(this, 'default')">Compact</button>
+                        <button class="tab" onclick="showCategory(this, 'default')">Error</button>
+                        <button class="tab" onclick="showCategory(this, 'default')">Success</button>
+                    </div>
+                    <div class="character-grid">
+                        <div class="character-card">
+                            <div class="character-name">Happy Coder</div>
+                            <div class="character-ascii">   \(^o^)/   오늘도 화이팅!
+    /|\      같이 열심히 해보자!
+    / \</div>
+                        </div>
+                        <div class="character-card">
+                            <div class="character-name">Coffee Coder</div>
+                            <div class="character-ascii">   ( ˘▽˘)っ♨  커피 한 잔 하고~
+    /|\       오늘도 달려보자!
+    / \</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pack-card">
+                    <div class="pack-header">
+                        <span class="pack-name">🐱 Animal Friends</span>
+                        <span class="pack-badge">FREE</span>
+                    </div>
+                    <p class="pack-description">귀여운 동물 친구들이 응원해요!</p>
+                    <div class="character-grid">
+                        <div class="character-card">
+                            <div class="character-name">Coding Cat</div>
+                            <div class="character-ascii">   /\_/\
+  ( o.o )   야옹~ 오늘도 코딩하자!
+   > ^ <    같이 놀자~</div>
+                        </div>
+                        <div class="character-card">
+                            <div class="character-name">Happy Dog</div>
+                            <div class="character-ascii">   /^ ^\    멍멍! 반가워!
+  / 0 0 \   꼬리 흔들흔들~
+  V\ Y /V   오늘도 신나게!</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pack-card">
+                    <div class="pack-header">
+                        <span class="pack-name">🤖 Robot Buddies</span>
+                        <span class="pack-badge">FREE</span>
+                    </div>
+                    <p class="pack-description">로봇 친구들과 함께 코딩!</p>
+                    <div class="character-grid">
+                        <div class="character-card">
+                            <div class="character-name">Friendly Bot</div>
+                            <div class="character-ascii">   [^_^]    삐빕! 시스템 온라인!
+   /|  |\   오늘도 함께 코딩!
+   d|  |b</div>
+                        </div>
+                        <div class="character-card">
+                            <div class="character-name">Victory Bot</div>
+                            <div class="character-ascii">   [*v*]    미션 컴플리트!
+   \|  |/   성공률 100%!
+   d|  |b   최고의 개발자!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">⚡ 상황별 응원</h2>
+            <div class="pack-grid">
+                <div class="pack-card">
+                    <div class="pack-header">
+                        <span class="pack-name">🌟 세션 시작</span>
+                    </div>
+                    <p class="pack-description">새로운 세션을 시작할 때 환영 인사!</p>
+                    <div class="character-ascii">    ☆
+   \(°▽°)/   반짝반짝 빛나는 하루!
+    /|\      시작이 반이야!
+    / \</div>
+                </div>
+                
+                <div class="pack-card">
+                    <div class="pack-header">
+                        <span class="pack-name">💫 컨텍스트 정리</span>
+                    </div>
+                    <p class="pack-description">Compact 전 격려와 응원!</p>
+                    <div class="character-ascii">      ~
+    (__)
+   \(--)/    잠시 명상 타임...
+    /|\      리프레시 하고 올게!
+    / \</div>
+                </div>
+                
+                <div class="pack-card">
+                    <div class="pack-header">
+                        <span class="pack-name">💪 에러 발생</span>
+                    </div>
+                    <p class="pack-description">에러가 났을 때 격려!</p>
+                    <div class="character-ascii">   (@_@)     버그 발견!
+    /|\__    탐정 모드 ON!
+    / \      범인을 찾아보자!</div>
+                </div>
+                
+                <div class="pack-card">
+                    <div class="pack-header">
+                        <span class="pack-name">🎉 빌드 성공</span>
+                    </div>
+                    <p class="pack-description">성공했을 때 축하!</p>
+                    <div class="character-ascii">   ♪
+   \(^▽^)/   파티 타임!
+    /|\♪     축하해~!
+    / \</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 class="cta-title">지금 바로 시작하세요!</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Claude Code에서 치어리더와 함께 코딩하세요
+            </p>
+            <div class="cta-buttons">
+                <a href="https://github.com/yourusername/dev-cheerleader" class="btn btn-primary">
+                    ⭐ GitHub에서 설치
+                </a>
+                <a href="https://github.com/yourusername/dev-cheerleader/blob/main/CONTRIBUTING.md" class="btn btn-secondary">
+                    🎨 캐릭터 기여하기
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Made with ❤️ for developers</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://github.com/yourusername/dev-cheerleader" style="color: var(--accent);">GitHub</a> · 
+                Apache 2.0 License
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function showCategory(btn, pack) {
+            // Simple tab switching logic
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>

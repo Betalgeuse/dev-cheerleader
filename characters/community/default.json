@@ -1,0 +1,175 @@
+{
+  "name": "Default Pack",
+  "author": "dev-cheerleader",
+  "version": "1.0.0",
+  "description": "기본 치어리더 캐릭터 팩",
+  
+  "characters": {
+    "welcome": [
+      {
+        "id": "welcome-1",
+        "name": "Happy Coder",
+        "ascii": "   \\(^o^)/   오늘도 화이팅!\n    /|\\      같이 열심히 해보자!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "welcome-2", 
+        "name": "Excited Dev",
+        "ascii": "    *\n   \\(>v<)/   Let's go!!!\n    /|\\      오늘도 멋진 하루!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "welcome-3",
+        "name": "Fresh Start",
+        "ascii": "    ~\n   \\(^_^)/   새로운 시작이야!\n    /|\\      화이팅~!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "welcome-4",
+        "name": "Coffee Coder",
+        "ascii": "   ( ˘▽˘)っ♨  커피 한 잔 하고~\n    /|\\       오늘도 달려보자!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "welcome-5",
+        "name": "Morning Star",
+        "ascii": "    ☆\n   \\(°▽°)/   반짝반짝 빛나는 하루!\n    /|\\      시작이 반이야!\n    / \\",
+        "author": "dev-cheerleader"
+      }
+    ],
+    
+    "preCompact": [
+      {
+        "id": "compact-1",
+        "name": "Organizer",
+        "ascii": "   \\(^_^)/   잠깐! 머리 정리중...\n    /|\\      넌 정말 잘하고 있어!\n    / \\      곧 돌아올게!",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "compact-2",
+        "name": "Thumbs Up",
+        "ascii": "    (>_<)b   컨텍스트 정리하고 올게~\n    /|\\      지금까지 수고했어!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "compact-3",
+        "name": "Rest Time",
+        "ascii": "   \\(o_o)/   휴식도 실력이야!\n    /|\\      잠깐 쉬고 더 잘해보자!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "compact-4",
+        "name": "Zen Master",
+        "ascii": "      ~\n    (__)\n   \\(--)/    잠시 명상 타임...\n    /|\\      리프레시 하고 올게!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "compact-5",
+        "name": "Quick Break",
+        "ascii": "   \\(=_=)/   잠깐 눈 좀 쉬자~\n    /|\\      금방 돌아올게!\n    / \\",
+        "author": "dev-cheerleader"
+      }
+    ],
+    
+    "errorRecovery": [
+      {
+        "id": "error-1",
+        "name": "Fighter",
+        "ascii": "   \\(>_<)/   에러? 괜찮아!\n    /|\\      버그는 성장의 기회야!\n    / \\      다시 해보자!",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "error-2",
+        "name": "Surprised",
+        "ascii": "   \\(O_O)/   오류 발생!\n    /|\\      하지만 걱정마~\n    / \\      같이 고쳐보자!",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "error-3",
+        "name": "Encourager",
+        "ascii": "   (^_^)b    실패는 성공의 어머니!\n    /|\\      디버깅 타임~\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "error-4",
+        "name": "Detective",
+        "ascii": "   (@_@)     버그 발견!\n    /|\\__    탐정 모드 ON!\n    / \\      범인을 찾아보자!",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "error-5",
+        "name": "Calm Down",
+        "ascii": "   \\(u_u)/   심호흡~\n    /|\\      차근차근 해보자!\n    / \\      넌 할 수 있어!",
+        "author": "dev-cheerleader"
+      }
+    ],
+    
+    "success": [
+      {
+        "id": "success-1",
+        "name": "Star Eyes",
+        "ascii": "   \\(*v*)/   성공! 대단해!\n    /|\\      역시 천재!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "success-2",
+        "name": "Celebration",
+        "ascii": "    * * *\n   \\(^o^)/   Perfect! 잘했어!\n    /|\\\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "success-3",
+        "name": "Victory",
+        "ascii": "   \\(^_^)/   빌드 성공!\n    /|\\      이 기세 그대로!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "success-4",
+        "name": "Champion",
+        "ascii": "    ★\n   \\(°∀°)/   우승!\n    /|\\      너무 멋져!\n    / \\",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "success-5",
+        "name": "Party Time",
+        "ascii": "   ♪\n   \\(^▽^)/   파티 타임!\n    /|\\♪     축하해~!\n    / \\",
+        "author": "dev-cheerleader"
+      }
+    ]
+  },
+  
+  "messages": {
+    "welcome": [
+      "새로운 세션 시작! 오늘도 멋진 코드 만들어보자!",
+      "다시 만나서 반가워! 어디까지 했더라?",
+      "자, 시작해볼까? 오늘도 화이팅!",
+      "Ready? 같이 문제 해결해보자!",
+      "좋은 아침! (아니면 좋은 밤?) 코딩 시작!",
+      "오늘의 목표는 뭐야? 같이 달성해보자!"
+    ],
+    "preCompact": [
+      "컨텍스트 정리할게. 잠시 후 더 가벼운 마음으로 돌아올게!",
+      "지금까지 정말 열심히 했어! 잠깐 쉬고 가자~",
+      "머리 식히고 올게! 넌 최고야!",
+      "정리하고 올게~ 다음엔 더 빠르게!",
+      "잠깐 리셋하고 더 집중해보자!",
+      "휴식은 생산성의 비결이야~"
+    ],
+    "errorRecovery": [
+      "에러 났어도 괜찮아! 차근차근 해결해보자!",
+      "실패는 성공으로 가는 길이야!",
+      "예외 상황이네~ 같이 분석해보자!",
+      "버그는 숨어있던 개선점이야!",
+      "디버깅은 탐정 놀이! 재밌게 해보자!",
+      "모든 시니어도 한때는 에러와 싸웠어!"
+    ],
+    "success": [
+      "빌드 성공! 역시 최고!",
+      "테스트 통과! 대단해!",
+      "깔끔하게 완료! 이 기세로!",
+      "완벽해! 다음 도전은 뭐야?",
+      "성공의 맛을 느껴봐~!",
+      "역시 프로는 다르다!"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Robot Buddies Pack",
+  "author": "dev-cheerleader",
+  "version": "1.0.0",
+  "description": "로봇 친구들 치어리더 팩",
+  
+  "characters": {
+    "welcome": [
+      {
+        "id": "robot-welcome-1",
+        "name": "Friendly Bot",
+        "ascii": "   [^_^]    삐빕! 시스템 온라인!\n   /|  |\\   오늘도 함께 코딩!\n   d|  |b",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "robot-welcome-2",
+        "name": "Hello Droid",
+        "ascii": "    ___\n   |o_o|    Hello, Developer!\n   |___|    Let's build something!\n   /| |\\",
+        "author": "dev-cheerleader"
+      }
+    ],
+    
+    "preCompact": [
+      {
+        "id": "robot-compact-1",
+        "name": "Rebooting Bot",
+        "ascii": "   [=_=]    시스템 리부팅...\n   /|  |\\   메모리 정리중...\n   d|  |b   잠시만 기다려!",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "robot-compact-2",
+        "name": "Sleep Mode",
+        "ascii": "    ___\n   |-_-|    절전 모드 진입...\n   |zzz|    에너지 충전중!\n   /| |\\",
+        "author": "dev-cheerleader"
+      }
+    ],
+    
+    "errorRecovery": [
+      {
+        "id": "robot-error-1",
+        "name": "Alert Bot",
+        "ascii": "   [!_!]    경고! 에러 감지!\n   /|  |\\   하지만 복구 가능!\n   d|  |b   분석 시작!",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "robot-error-2",
+        "name": "Debug Droid",
+        "ascii": "    ___\n   |@_@|    디버그 모드 ON!\n   |___|    버그 스캔중...\n   /| |\\    해결책 탐색!",
+        "author": "dev-cheerleader"
+      }
+    ],
+    
+    "success": [
+      {
+        "id": "robot-success-1",
+        "name": "Victory Bot",
+        "ascii": "   [*v*]    미션 컴플리트!\n   \\|  |/   성공률 100%!\n   d|  |b   최고의 개발자!",
+        "author": "dev-cheerleader"
+      },
+      {
+        "id": "robot-success-2",
+        "name": "Party Droid",
+        "ascii": "    _★_\n   |^o^|    축하합니다!\n   |___|    완벽한 실행!\n   \\| |/",
+        "author": "dev-cheerleader"
+      }
+    ]
+  }
+}

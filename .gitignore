@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output (uncomment if you want to commit pre-built dist)
+# .factory/hooks/dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.cache/
+*.cache
+
+# Temp
+tmp/
+temp/
