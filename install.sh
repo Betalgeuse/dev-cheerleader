@@ -76,7 +76,6 @@ if command -v jq &> /dev/null; then
     
     # Merge cheerleader hooks
     jq '.hooks.SessionStart = ((.hooks.SessionStart // []) + [{
-        "matcher": "resume|compact|clear",
         "hooks": [{
             "type": "command",
             "command": "$HOME/.claude/hooks/session-start-cheerleader.sh"
